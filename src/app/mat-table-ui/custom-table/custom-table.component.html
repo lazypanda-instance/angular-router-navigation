@@ -1,0 +1,136 @@
+<div class="d-flex">
+  <div class="search-container" *ngIf="isSearchShow">
+    <div *ngIf="(isSearchActive | async);then showSearchActiveState else showSearchDeactiveState"></div>
+    <ng-template #showSearchDeactiveState>
+      <div #searchBtn class="d-flex search-btn" floating="true" size="sm" (click)='searchOnTable()'>
+        <img src='assets/images/icon_search.svg'>
+        <div class="btn-txt">SEARCH</div>
+      </div>
+    </ng-template>
+
+    <ng-template #showSearchActiveState>
+      <div class="search">
+        <input #filterInput type="text" maxlength="50" (keyup)='searchQueryOnDataSource($event)' />
+        <span id="search-icon"><img src='assets/images/icon_search.svg'></span>
+        <span id="search-clear"><img (click)="closeSearch()" src='assets/images/Close.svg'></span>
+      </div>
+
+    </ng-template>
+  </div>
+
+  <div *ngIf="isDelete">
+    <div *ngIf="(deleteObserver | async)" class="d-flex remove-btn mt-2" (click)='removeSelectItems()'>
+      <div class="imgDel mt-2 ml-4"><img class="img-fluid mx-auto d-block mt-2" src='assets/images/Remove.svg'></div>
+      <div class="title-txt ml-0 mt-1">Remove</div>
+    </div>
+  </div>
+</div>
+<div class="table-container">
+  <mat-table #MatTable [dataSource]="dataSource" matSort matSortActive="dateCreated" matSortDisableClear
+    matSortDirection="desc">
+
+    <div *ngIf="isSelectAll">
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef style="flex: 0 0 60px;">
+          <mat-checkbox [ngClass]="{'d-none': !isEachRowSelect }" (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" style="flex: 0 0 60px;">
+          <mat-checkbox  *ngIf="!row?.isHide" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)" [disabled]="isDisabled(row)" [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+    </div>
+
+    <ng-container [matColumnDef]="column?.columnName" *ngFor="let column of displayedColumns; let i = index">
+      <mat-header-cell *matHeaderCellDef [mat-sort-header]="enabledSortingForColumn(column?.columnName)"
+        [disabled]="column?.columnName !== enabledSortingForColumn(column?.columnName) ? true : false"
+        [ngStyle]="{'flex': column?.width }" (click)="headerClick(column?.columnName, column?.sortType)">
+        <div class="left-header-padding txt-style">{{ column?.title }}</div>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let element" [ngStyle]="{'flex': column?.width }">
+        <div *ngIf="column?.columnName === 'action'" class="left-row-padding" style="padding-top: 7px;">
+          <mat-menu class="action-item-menu" #actionItemMenu="matMenu" xPosition="before">
+            <button [disableRipple]="true" mat-menu-item *ngFor="let actionItem of actionItems"
+              (click)="getAction(actionItem.title, element)">{{ actionItem?.title }}</button>
+          </mat-menu>
+        </div>
+
+        <div *ngIf="column?.columnName === 'schema'"
+          (click)="!isDisabled(element) && schemaCopy($event, element[column?.columnName])"
+          class="left-row-padding ml-3">
+          <img src="/assets/images/schema-copy-3.svg">
+        </div>
+
+        <div *ngIf="column?.columnName === 'accountFilter'" class="left-row-padding ml-3">
+          <mat-slide-toggle [disabled]="isDisabled() || element['isAccountFilterOn']" [checked]="element[column?.columnName]"
+            (change)="onToggle($event, column?.columnName, element, dataSource)" (click)="$event.stopPropagation()">
+          </mat-slide-toggle>
+        </div>
+
+        <div *ngIf="column?.columnName === 'dynamicFilter'" class="left-row-padding ml-3">
+          <mat-slide-toggle [disabled]="isDisabled() || element['isDynamicFilterOn']" [checked]="element[column?.columnName]"
+            (change)="onToggle($event, column?.columnName, element, dataSource)" (click)="$event.stopPropagation()">
+          </mat-slide-toggle>
+        </div>
+
+        <div class="left-row-padding txt-style"
+              [ngStyle]="{'color': selection?.isSelected(element) ? 'red' : 'lightgray'}"
+             *ngIf="column?.columnName === 'company' && element[column?.columnName] === '-'"
+             [appTooltip]="{key: column?.columnName, value:element}">
+          {{ selection?.isSelected(element) ? 'Company Selection Required' : '-' }}
+        </div>
+
+        <div class="left-row-padding txt-style" *ngIf="column?.columnName === 'company' &&
+                    element[column?.columnName] !== '-'"
+                    [appTooltip]="{key: column?.columnName, value:element}">
+          {{ element[column?.columnName] }}
+        </div>
+
+        <div class="left-row-padding txt-style" *ngIf="column?.columnName === 'operatingCompanies'" [innerHTML]=element[column?.columnName]
+        [appTooltip]="{key: column?.columnName, value:element}">
+        </div>
+
+        <div *ngIf="column?.columnName !== 'action' &&
+                    column?.columnName !== 'schema' &&
+                    column?.columnName !== 'accountFilter' &&
+                    column?.columnName !== 'dynamicFilter' &&
+                    column?.columnName !== 'company' &&
+                    column?.columnName !== 'operatingCompanies'"
+          [ngClass]="{'txt-style-bold': (column?.isBold), 'txt-style-normal': (!column?.isBold)}"
+          [matTooltip]="element?.isInActive ? 'Pending Approval' : (element?.status === 'inactive') ? 'Inactive' : ''"
+          class="left-row-padding txt-style" [appTooltip]="{key: column?.columnName, value:element}">
+          {{ element[column?.columnName] }}
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="cloumnsData"></mat-header-row>
+    <mat-row [ngStyle]="getStyle(row)" *matRowDef="let row; columns: cloumnsData;"
+      (click)="globalService.isUserTypeApprover ? getRecord(row) : (!isDisabled(row) && getRecord(row))" matTooltipPosition="below" matTooltipTouchGestures="auto" ></mat-row>
+  </mat-table>
+</div>
+
+<div>
+  <div class="row m-0 table-footer">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+      <div *ngIf='!isPaginationDisable'>
+        <div class="d-flex justify-content-center pagination">
+          <ul *ngFor="let page of numberOfPageArray">
+            <li (click)="selectedPage(page, false)"
+              [ngClass]="{'selected': page.selection, 'not-selected': !page.selection }">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+</div>

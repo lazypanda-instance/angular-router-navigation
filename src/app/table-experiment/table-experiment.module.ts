@@ -4,6 +4,7 @@ import { SimpleTableComponent } from './simple-table/simple-table.component';
 import { VariousTableMenuComponent } from './various-table-menu/various-table-menu.component';
 import { Route, RouterModule } from '@angular/router';
 import { TableConfigComponent } from './table-config/table-config.component';
+import { TableUIModule } from '../mat-table-ui/tableUi.module';
 
 const baseTableRoute: Route[] = [
   {
@@ -51,7 +52,8 @@ const baseTableRoute: Route[] = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(baseTableRoute)
+    RouterModule.forChild(baseTableRoute),
+    TableUIModule
   ]
 })
 export class TableExperimentModule { }
