@@ -1,6 +1,19 @@
 <div class="container-fluid master-page">
-  <h4>Material table - {{ tableType }}</h4>
-  <div>
+  <h4>A Customized & Configurable Material table</h4>
+  <div style="float: right;">
     <a [routerLink]="['/mat-table/config']" class="btn btn-sm btn-primary mt-1">Configure Table</a>
+  </div>
+
+  <div style="margin-top: 5rem;">
+    <app-custom-table *ngIf="config"
+                          [tableConfig]='config'
+                          [data]="dataSource"
+                          (selectedRow)="selectedTableRowData($event)"
+                          (deleteAll)="deleteSelectedItems($event)"
+                          (searchCount)="updateSearchCount($event)"></app-custom-table>
+  </div>
+
+  <div>
+    <label>Total Table Data Count: {{count}}</label>
   </div>
 </div>

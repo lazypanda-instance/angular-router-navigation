@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.1 (72631) - https://sketchapp.com -->
+    <title>3D08E71A-4AFA-4D27-8BB0-5C1339DFDC63</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M8.33333333,7.33333333 L7.80666667,7.33333333 L7.62,7.15333333 C8.27333333,6.39333333 8.66666667,5.40666667 8.66666667,4.33333333 C8.66666667,1.94 6.72666667,0 4.33333333,0 C1.94,0 0,1.94 0,4.33333333 C0,6.72666667 1.94,8.66666667 4.33333333,8.66666667 C5.40666667,8.66666667 6.39333333,8.27333333 7.15333333,7.62 L7.33333333,7.80666667 L7.33333333,8.33333333 L10.6666667,11.66 L11.66,10.6666667 L8.33333333,7.33333333 Z M4.33333333,7.33333333 C2.67333333,7.33333333 1.33333333,5.99333333 1.33333333,4.33333333 C1.33333333,2.67333333 2.67333333,1.33333333 4.33333333,1.33333333 C5.99333333,1.33333333 7.33333333,2.67333333 7.33333333,4.33333333 C7.33333333,5.99333333 5.99333333,7.33333333 4.33333333,7.33333333 Z" id="path-1"></path>
+    </defs>
+    <g id="Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-View---Other-Actions" transform="translate(-1125.000000, -98.000000)">
+            <g id="Content" transform="translate(0.000000, 68.000000)">
+                <g id="Greeting-and-Filters">
+                    <g id="Search-&amp;-Filters" transform="translate(1115.000000, 24.000000)">
+                        <g id="search">
+                            <g id="Icons-/-icon---search" transform="translate(8.000000, 4.000000)">
+                                <g id="ic_search_24px" transform="translate(2.000000, 2.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Shape" fill="#007DBA" xlink:href="#path-1"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

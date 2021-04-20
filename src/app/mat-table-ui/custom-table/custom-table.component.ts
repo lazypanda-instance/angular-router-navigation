@@ -14,7 +14,6 @@ import { MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-custom-table',
@@ -33,7 +32,7 @@ export class CustomTableComponent implements OnInit {
   @Output() deleteAll?: EventEmitter<any> = new EventEmitter<any>();
   @Output() selectedItem?: EventEmitter<any> = new EventEmitter<any>();
   @Output() actionItem?: EventEmitter<any> = new EventEmitter<any>();
-  @Output() selectedPartner: EventEmitter<object> = new EventEmitter<object>();
+  @Output() selectedRow: EventEmitter<object> = new EventEmitter<object>();
   @Output() updatedData: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild(MatSort) sort: MatSort;
@@ -73,7 +72,7 @@ export class CustomTableComponent implements OnInit {
 
   currentColumnName: string;
 
-  constructor(private dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.deleteObserver = this.isEnableDelete.asObservable().pipe(delay(0));
@@ -90,13 +89,7 @@ export class CustomTableComponent implements OnInit {
   toggleCheckbox(preSelection: any): void {
     this.dataSource.data.forEach(row => {
       preSelection.find(data => {
-        if (this.tableConfig.type === 'account_authorization') {
-          if (data && data.hasOwnProperty('id') &&
-              data.id === row.id &&
-              data.opco === row.opco) {
-            this.selection.select(row);
-          }
-        } else if (data && data.hasOwnProperty('id') && data.id === row.id) {
+        if (data && data.hasOwnProperty('id') && data.id === row.id) {
           this.selection.select(row);
         }
       });
@@ -259,10 +252,6 @@ export class CustomTableComponent implements OnInit {
     });
   }
 
-  /**
-   * Pagination, can be improvised with different component
-   */
-
   selectedPage(selectedIndex: any, isDeleteOperation?: boolean): void {
     let dataSet: Array<any>;
     if (!isDeleteOperation) {
@@ -312,7 +301,7 @@ export class CustomTableComponent implements OnInit {
   }
 
   sortDataSource(data: Array<any>, isAscending: boolean, columnName: any, sortType: string): Array<any> {
-    if (columnName === 'createdDate') {
+    if (columnName === 'date') {
       return data.sort((a, b) => {
         if (isAscending) {
           return (new Date(a.createdDateWithTime) as any) - (new Date(b.createdDateWithTime) as any);
@@ -385,34 +374,7 @@ export class CustomTableComponent implements OnInit {
   }
 
   getRecord(rowRecord: object): void {
-    this.selectedPartner.emit(rowRecord);
-  }
-
-  private createModel(componentName: any, data: any): void {
-    let dialogRef = this.dialog.open(componentName, {
-      width: '518px',
-      hasBackdrop: true,
-      disableClose: true,
-      autoFocus: false,
-      data
-    }).afterClosed().subscribe((result) => {
-      if (result) {
-        dialogRef = undefined;
-      }
-    });
-  }
-
-  onToggle(event: any, columnName: string, columnData: any, dataSource: any): void {
-    if (columnName === 'accountFilter') {
-      columnData.accountFilter = event.checked;
-    } else {
-      columnData.dynamicFilter = event.checked;
-    }
-    const toggleData = {
-      data: dataSource.filteredData,
-      columnName
-    };
-    this.updatedData.emit(toggleData);
+    this.selectedRow.emit(rowRecord);
   }
 
   searchQueryOnDataSource($event): void {
@@ -441,6 +403,4 @@ export class CustomTableComponent implements OnInit {
       this.toggleCheckbox(this.preSelection);
     }, 100);
   }
-
-  closeModal(): void { }
 }

@@ -5,55 +5,37 @@ import { VariousTableMenuComponent } from './various-table-menu/various-table-me
 import { Route, RouterModule } from '@angular/router';
 import { TableConfigComponent } from './table-config/table-config.component';
 import { TableUIModule } from '../mat-table-ui/tableUi.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../mat-table-ui/material.module';
 
 const baseTableRoute: Route[] = [
   {
     path: '',
-    redirectTo: 'simple-table?type=simple-table',
+    redirectTo: 'simple-table',
     pathMatch: 'full'
   },
   {
-    path: '',
-    component: VariousTableMenuComponent,
-    children: [
-      {
-        path: 'config',
-        component: TableConfigComponent
-      },
-      {
-        path: 'simple-table',
-        component: SimpleTableComponent
-      },
-      {
-        path: 'table-with-select-all',
-        component: SimpleTableComponent
-      },
-      {
-        path: 'table-with-multiple-page',
-        component: SimpleTableComponent
-      },
-      {
-        path: 'table-with-highlight',
-        component: SimpleTableComponent
-      },
-      {
-        path: 'table-with-custom-control',
-        component: SimpleTableComponent
-      }
-    ]
+    path: 'config',
+    component: TableConfigComponent
+  },
+  {
+    path: 'simple-table',
+    component: SimpleTableComponent
   }
 ];
 
 @NgModule({
   declarations: [
     SimpleTableComponent,
-    VariousTableMenuComponent,
     TableConfigComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(baseTableRoute),
-    TableUIModule
+    TableUIModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class TableExperimentModule { }

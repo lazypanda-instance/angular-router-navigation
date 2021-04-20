@@ -1,0 +1,234 @@
+[
+  {
+    "company": "Apple",
+    "os": "iOS",
+    "status": "active",
+    "website": "<a href='www.apple.com'>www.apple.com</a>",
+    "model": [
+      "iPhone",
+      "iPad",
+      "iPod"
+    ],
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+  },
+  {
+    "company": "Samsung",
+    "os": "Android",
+    "status": "active",
+    "website": "<a href='www.samsung.com'>www.samsung.com</a>",
+    "model": [
+      "Galaxy Note",
+      "Galaxy S21",
+      "Galaxy A51"
+    ],
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg"
+  },
+  {
+    "company": "Motorola",
+    "os": "Android",
+    "status": "inactive",
+    "website": "<a href='www.motorola.com'>www.motorola.com</a>",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/45/Motorola-logo-black-and-white.png",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 1",
+    "os": "Android",
+    "status": "active",
+    "website": "www.company1.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "5G",
+      "4G",
+      "One+",
+      "Two+"
+    ]
+  },
+  {
+    "company": "Company 2",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company2.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 3",
+    "os": "Android",
+    "status": "inactive",
+    "website": "www.Company3.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 4",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company4.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 5",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company5.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 6",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company6.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 7",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company7.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 8",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company8.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 9",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company9.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 10",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company10.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 11",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company11.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 12",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company12.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 13",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company13.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 14",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company14.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  },
+  {
+    "company": "Company 15",
+    "os": "Android",
+    "status": "active",
+    "website": "www.Company15.com",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    "model": [
+      "One 5G",
+      "G9",
+      "GPower",
+      "5G ACE"
+    ]
+  }
+]

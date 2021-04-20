@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>F265D797-9435-4B23-951F-A5ED39C0C304</title>
+    <defs>
+        <polygon id="path-1" points="11.6666667 1.175 10.4916667 0 5.83333333 4.65833333 1.175 0 0 1.175 4.65833333 5.83333333 0 10.4916667 1.175 11.6666667 5.83333333 7.00833333 10.4916667 11.6666667 11.6666667 10.4916667 7.00833333 5.83333333"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Data-Authorization-Email-Deny" transform="translate(-966.000000, -249.000000)">
+            <g id="continue-session" transform="translate(399.000000, 229.000000)">
+                <g id="icon---close" transform="translate(567.000000, 20.000000)">
+                    <g id="ic_close_24px" transform="translate(0.166667, 0.166667)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Path" fill="#4D4D4F" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -5,8 +5,6 @@ app-custom-table {
     color: #BCBCBC;
   }
   .search-container {
-    padding-left: 1.875rem;
-    padding-top: 1.25rem;
     height: 3.2em;
 
     .search-btn {
@@ -22,6 +20,7 @@ app-custom-table {
       img {
         padding-left: 0.625rem;
         padding-right: 0.375rem;
+        width: 30px;
       }
       .btn-txt {
         padding-top: 0.375rem;
@@ -37,7 +36,6 @@ app-custom-table {
 
   mat-table {
     width: 100%;
-    padding: 1.25rem 1.875rem;
 
     mat-header-row {
       min-height: 42px;
@@ -149,7 +147,6 @@ app-custom-table {
     float: right;
     cursor: pointer;
     .title-txt {
-      padding-top: 0.69rem;
       padding-left: 0px;
       font-size: 0.875rem;
       color: #4d4d4f;
@@ -184,7 +181,7 @@ app-custom-table {
 
   .imgDel-disable {
     content: "";
-    background: URL("assets/images/icon-close.svg") no-repeat;
+    background: URL("assets/icon-close.svg") no-repeat;
     opacity: 1;
     height: 35px;
     width: 35px;
@@ -192,7 +189,7 @@ app-custom-table {
   }
   .imgDel-enable {
     content: "";
-    background: URL("assets/images/icon-removeActive.svg") no-repeat;
+    background: URL("assets/icon-removeActive.svg") no-repeat;
     opacity: 1;
     height: 35px;
     width: 35px;

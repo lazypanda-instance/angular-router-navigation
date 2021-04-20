@@ -36,9 +36,9 @@ $customize-mat-table-theme: mat-light-theme((
 
 @import '~bootstrap/scss/bootstrap';
 
-@import './app/table-experiment/various-table-menu/various-table-menu.component.scss';
 @import './app/table-experiment/simple-table/simple-table.component.scss';
 @import './app/table-experiment/table-config/table-config.component.scss';
+@import './app/mat-table-ui/custom-table/custom-table.component.scss';
 
 html, body {
   overflow-x: hidden;

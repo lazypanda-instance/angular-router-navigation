@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B92D2B1C-075B-4658-A74E-E3D32526E88D</title>
+    <defs>
+        <path d="M1,16 C1,17.1 1.9,18 3,18 L11,18 C12.1,18 13,17.1 13,16 L13,4 L1,4 L1,16 Z M14,1 L10.5,1 L9.5,0 L4.5,0 L3.5,1 L0,1 L0,3 L14,3 L14,1 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Partners-Home_Populated_Delete" transform="translate(-393.000000, -220.000000)">
+            <g id="Group-5-Copy" transform="translate(147.000000, 132.000000)">
+                <g id="Group-3" transform="translate(241.000000, 85.000000)">
+                    <g id="Icon-/-Actions-/-Remove" transform="translate(5.000000, 3.000000)">
+                        <g id="ic_delete_24px">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Shape" fill="#939598" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

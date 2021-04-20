@@ -1,5 +1,44 @@
 <div class="container-fluid bg side-view">
-  <h4>Material Table Configuration</h4>
+  <h2>Material Table Configuration</h2>
+
+  <div class="row m-0 partner-form">
+    <form [formGroup]="configureTableForm" novalidate>
+      <div class="row mt-4">
+
+        <div class="col-md-5">
+          <div>
+            <mat-form-field class="input-drpdwn" hideRequiredMarker>
+              <mat-select placeholder="Number of Row Per Page" formControlName="noOfItemPerPage">
+                <mat-option class="dropdown-options" *ngFor="let options of noOfPageDataSource" [value]="options">{{
+                  options }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="operating-companies mt-3">Configuration (optional)</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mt-4" *ngFor="let configuration of configurations.controls; let i = index;">
+          <mat-checkbox id="configuration{{i}}" [checked]="defaultConfigurations[i].selected"
+            [formControl]="configuration">{{ defaultConfigurations[i].title }}</mat-checkbox>
+        </div>
+      </div>
+
+      <hr>
+    </form>
+  </div>
+
+  <div>
+    <a class="btn btn-md btn-primary mt-1" (click)="addMoreData()">Add Few More Data</a>
+  </div>
+
+  <hr>
+
 
   <div class="row">
     <a class="btn btn-sm btn-primary mt-1" (click)="navigateToBack()">Save</a>

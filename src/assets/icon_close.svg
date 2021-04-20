@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>7E48778F-B83C-4AB7-B7CB-44FF55369BD2</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="11.6666667 1.175 10.4916667 0 5.83333333 4.65833333 1.175 0 0 1.175 4.65833333 5.83333333 0 10.4916667 1.175 11.6666667 5.83333333 7.00833333 10.4916667 11.6666667 11.6666667 10.4916667 7.00833333 5.83333333"></polygon>
+    </defs>
+    <g id="-----0.1---Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login---User-Login---Error-State" transform="translate(-859.000000, -124.000000)">
+            <g id="Content">
+                <g id="error" transform="translate(475.000000, 104.000000)">
+                    <g id="icon---close" transform="translate(380.000000, 16.000000)">
+                        <g id="ic_close_24px" transform="translate(4.166667, 4.166667)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Path" fill="#4D4D4F" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
