@@ -60,5 +60,4 @@ export class SimpleTableComponent implements OnInit {
   updateSearchCount(event: number): void {
     this.count = event;
   }
-
 }
