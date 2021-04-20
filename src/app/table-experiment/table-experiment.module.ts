@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SimpleTableComponent } from './simple-table/simple-table.component';
-import { VariousTableMenuComponent } from './various-table-menu/various-table-menu.component';
 import { Route, RouterModule } from '@angular/router';
 import { TableConfigComponent } from './table-config/table-config.component';
 import { TableUIModule } from '../mat-table-ui/tableUi.module';
